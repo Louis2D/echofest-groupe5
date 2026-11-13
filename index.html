@@ -6,11 +6,11 @@
 <title>Echo-Fest · Groupe 5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --canvas:#090909; --paper:#f7f9fa; --white:#fff; --violet:#af50ff; --halo:#6c4bd6; --lavender:#d4a0ff;
-  --muted:#8a8a8f; --rule:rgba(255,255,255,.25); --hair:rgba(255,255,255,.4); --glass:rgba(255,255,255,.08);
+  --muted:#a9abb3; --rule:rgba(255,255,255,.25); --hair:rgba(255,255,255,.4); --glass:rgba(255,255,255,.08);
   --context:#7a7a83; --context-soft:#3a3a3e; --hi:#c084ff; --edge:#4d5da5;
   --sans:"Inter","Whyte Inktrap",Arial,sans-serif; --serif:"Bodoni Moda","GrandSlang",Georgia,serif; --mono:"Space Mono",ui-monospace,monospace;
 }
@@ -323,6 +323,83 @@ body:not(.mode-dash) .dash{display:none}
   body.mode-dash .card,body.mode-dash .tile{break-inside:avoid}
 }
 
+/* ================= LISIBILITÉ (projection) ================= */
+.serif,.ital{font-weight:500}
+h1.display .serif.dim{color:#c9cbd2}
+.dim{color:#b9bbc3}
+.nav{font-size:15px}
+.nav .chap{color:#b9bbc3}
+.nav .nr{font-size:15px}
+.tele{font-size:16px;color:#a9abb3;bottom:30px}
+.label{font-size:17px;color:#b9bbc3;letter-spacing:.06em}
+.kicker{font-size:18px}
+.note{font-size:23px;font-weight:400;color:#d9dbe0;line-height:1.45}
+/* slide 1 */
+.s1 .ticket .route{font-size:16px;color:#d9dbe0}
+.s1 .row .d{font-size:24px;font-weight:400;color:#e4e6ea}
+.s1 .row .d i,.tk .dd i{font-weight:500}
+/* slide 2 */
+.eq .t span{font-size:21px;font-weight:400;color:#d9dbe0}
+.flap{gap:14px}
+.flap .fr{height:84px;background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,.06))}
+.flap .face{background:#121215;padding:0 28px}
+.flap .face::after{display:none}
+.flap .w{font-family:var(--sans);font-weight:700;font-size:44px;letter-spacing:-.01em;text-transform:none}
+.flap .w .o{color:#fff;-webkit-text-stroke:0}
+.flap .c{font-size:21px;color:#e4e6ea;max-width:360px;line-height:1.3}
+.shame th{font-size:16px;color:#b9bbc3}
+.shame td{font-size:25px;font-weight:400}
+/* axes */
+.hbar .axis div,.dots .axis div,.wf .axis div{font-family:var(--sans);font-size:17px;color:#b9bbc3}
+.hbar .axis span,.dots .axis span{top:8px}
+.hbar .axis div,.dots .axis div{height:30px}
+/* slide 3 */
+.hbar .t{font-size:25px;font-weight:400;color:#e4e6ea}
+.realloc td{font-size:23px;font-weight:400}
+.realloc td.d{font-family:var(--sans);font-size:23px;font-weight:600}
+.realloc .arrow{color:#b9bbc3}
+.kpis .k span{font-size:19px;font-weight:400;color:#d9dbe0}
+/* slide 4 */
+.dots .t{font-size:25px;font-weight:400;color:#e4e6ea}
+.legend{font-size:20px;color:#d9dbe0}
+.acces .a span{font-size:19px;font-weight:400;color:#d9dbe0}
+.plan li .a{font-size:23px;font-weight:400}
+.plan li .i{font-size:18px}
+/* slide 5 */
+.tk .lab{font-size:16px;color:#fff}
+.tk .dd{font-size:21px;font-weight:400;color:#fff}
+.s5 .closing{font-weight:400}
+.s5 .tele{color:rgba(255,255,255,.8)!important}
+/* slide 6 */
+.calc{font-family:var(--sans);font-size:25px;line-height:1.6;color:#e4e6ea}
+.calc div{display:grid;grid-template-columns:150px 1fr}
+.calc .h{color:#a9abb3;font-size:17px;letter-spacing:.06em;text-transform:uppercase;padding-top:6px}
+.calc b{font-weight:600}
+.towers .gl{font-family:var(--sans);font-size:16px;color:#a9abb3}
+.towers .cl{font-size:22px;font-weight:400;color:#e4e6ea}
+.rain .note{font-size:22px}
+/* dashboard */
+.dnav{font-size:13px} .dnav .chap{color:#b9bbc3}
+.dhead p{font-weight:400;color:#d9dbe0}
+.tile .l{font-size:13px;color:#b9bbc3}
+.tile .c{font-weight:400;color:#d9dbe0;font-size:16px}
+.card .q{font-size:13px}
+.hb .t,.dp .t{font-weight:400;color:#e4e6ea;font-size:16px}
+.axis .ax{font-family:var(--sans);font-size:13px;color:#b9bbc3}
+.foot{font-weight:400;color:#c9cbd2;font-size:15px}
+.dleg{color:#d9dbe0}
+.method p{font-weight:400;color:#d9dbe0}
+.clab{color:#d9dbe0;font-size:15px}
+.seg button{font-size:15px}
+
+.realloc td:first-child{white-space:nowrap}
+.realloc .new{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lavender);margin-left:8px;vertical-align:2px}
+.plan li{grid-template-columns:50px 1fr 200px}
+.plan li.tot{grid-template-columns:50px 1fr 300px}
+.plan li.tot .c{font-size:30px}
+.s5 .horizon{height:1100px;border-radius:0 0 50% 50%/0 0 240px 240px}
+.towers .cl{width:240px;left:-35px}
+
 /* controls */
 .hud{position:fixed;right:20px;bottom:16px;opacity:0;transition:opacity .3s;font:400 13px var(--mono);color:#666;z-index:50;user-select:none}
 .hud.on{opacity:1}
@@ -433,8 +510,8 @@ body:not(.mode-dash) .dash{display:none}
       <tr><td>Meta Ads</td><td class="num">4 200 €</td><td class="arrow">→</td><td class="num">3 800 €</td><td class="d">−400</td></tr>
       <tr><td>Street marketing BDE</td><td class="num">2 400 €</td><td class="arrow">→</td><td class="num">1 600 €</td><td class="d">−800</td></tr>
       <tr><td>Pass Culture</td><td class="num">400 €</td><td class="arrow">→</td><td class="num">400 €</td><td class="d">=</td></tr>
-      <tr><td>Parrainage <span class="ital dim">nouveau</span></td><td class="num">0 €</td><td class="arrow">→</td><td class="num">1 200 €</td><td class="d">+1 200</td></tr>
-      <tr><td>Pub en allemand <span class="ital dim">nouveau</span></td><td class="num">0 €</td><td class="arrow">→</td><td class="num">1 500 €</td><td class="d">+1 500</td></tr>
+      <tr><td>Parrainage <span class="new">nouveau</span></td><td class="num">0 €</td><td class="arrow">→</td><td class="num">1 200 €</td><td class="d">+1 200</td></tr>
+      <tr><td>Pub en allemand <span class="new">nouveau</span></td><td class="num">0 €</td><td class="arrow">→</td><td class="num">1 500 €</td><td class="d">+1 500</td></tr>
     </table>
     <div class="kpis">
       <div class="k"><b>+15 %</b><span>de billets payants estimés<br>(1 455 contre 1 268)</span></div>
@@ -506,18 +583,18 @@ body:not(.mode-dash) .dash{display:none}
     <div class="gl" style="bottom:33.33%"><span>150 m</span></div>
     <div class="gl" style="bottom:66.67%"><span>300 m</span></div>
     <div class="gl" style="bottom:100%"><span>450 m</span></div>
-    <div class="col" style="left:30px;height:95.09%" data-tip="4 114 gobelets × 10,4 cm"><div class="cv">428 m</div><div class="cl">Gobelets posés<br>les uns sur les autres</div></div>
+    <div class="col" style="left:30px;height:95.09%" data-tip="4 114 gobelets × 10,4 cm"><div class="cv">428 m</div><div class="cl">Gobelets posés<br>bout à bout</div></div>
     <div class="col hi" style="left:300px;height:31.56%" data-tip="Flèche de la cathédrale de Strasbourg"><div class="spire"></div><div class="cv">142 m</div><div class="cl">Flèche de<br>la cathédrale</div></div>
     <div class="col" style="left:570px;height:9.16%" data-tip="10,4 cm + 4 113 × 1 cm"><div class="cv">41 m</div><div class="cl">Gobelets<br>emboîtés</div></div>
     <div class="base"></div>
   </div>
   <div class="right">
     <div class="calc">
-      <div><span class="h">bar</span> 34 286 € × 60 % ÷ 5 € = <b>4 114 boissons</b></div>
-      <div><span class="h">volume</span> 4 114 × 25 cl = <b>1 029 litres</b></div>
-      <div><span class="h">gobelet</span> Ecocup 25 cl = <b>10,4 cm</b></div>
-      <div><span class="h">emboîté</span> ≈ 1 cm par gobelet <span class="h">(hypothèse)</span></div>
-      <div><span class="h">seuil</span> il faudrait <b>3,45 cm</b> pour dépasser</div>
+      <div><span class="h">bar</span><span>34 286 € × 60 % ÷ 5 € = <b>4 114 boissons</b></span></div>
+      <div><span class="h">volume</span><span>4 114 × 25 cl = <b>1 029 litres</b></span></div>
+      <div><span class="h">gobelet</span><span>Ecocup 25 cl = <b>10,4 cm</b></span></div>
+      <div><span class="h">emboîté</span><span>≈ 1 cm par gobelet <span class="h">(hypothèse)</span></span></div>
+      <div><span class="h">seuil</span><span>il faudrait <b>3,45 cm</b> pour dépasser</span></div>
     </div>
     <div class="rain glass">
       <div class="label" style="margin-bottom:14px">Et la pluie sur les 4 hectares ?</div>
