@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --canvas:#090909; --paper:#f7f9fa; --white:#fff; --violet:#af50ff; --halo:#6c4bd6; --lavender:#d4a0ff;
+  --canvas:#15131d; --paper:#f7f9fa; --white:#fff; --violet:#af50ff; --halo:#6c4bd6; --lavender:#d4a0ff;
   --muted:#a9abb3; --rule:rgba(255,255,255,.25); --hair:rgba(255,255,255,.4); --glass:rgba(255,255,255,.08);
   --context:#7a7a83; --context-soft:#3a3a3e; --hi:#c084ff; --edge:#4d5da5;
   --sans:"Inter","Whyte Inktrap",Arial,sans-serif; --serif:"Bodoni Moda","GrandSlang",Georgia,serif; --mono:"Space Mono",ui-monospace,monospace;
@@ -400,6 +400,44 @@ h1.display .serif.dim{color:#c9cbd2}
 .s5 .horizon{height:1100px;border-radius:0 0 50% 50%/0 0 240px 240px}
 .towers .cl{width:240px;left:-35px}
 
+.tk{height:390px}
+.rail{top:370px!important}
+.tk .who{font-size:17px;line-height:1.35;margin-top:14px;padding-top:12px;border-top:.5px solid rgba(255,255,255,.45);color:#fff;font-weight:500}
+.acces .a.us span{font-size:18px}
+
+/* ================= FOND DOUX + ANIMATIONS ================= */
+.slide{background:radial-gradient(1100px 650px at 88% -8%,rgba(108,75,214,.20),transparent 62%),radial-gradient(900px 620px at -8% 108%,rgba(40,100,210,.14),transparent 60%),var(--canvas)}
+.dash{background:radial-gradient(1000px 600px at 90% 0,rgba(108,75,214,.16),transparent 60%),var(--canvas)}
+.s2 .right,.s3 .left,.s4 .left{background:rgba(255,255,255,.035);border-radius:2px;box-shadow:0 0 0 28px rgba(255,255,255,.035);outline:1px solid rgba(255,255,255,.09);outline-offset:28px}
+.glass{background:rgba(255,255,255,.07)}
+.card{background:rgba(255,255,255,.055)}
+.tile{background:rgba(255,255,255,.07)}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes drift{from{transform:translateX(-60px);opacity:.55}to{transform:translateX(60px);opacity:1}}
+.slide .anim{opacity:0}
+.slide.in .anim{animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0s)}
+.hbar .bar{transform-origin:left center}
+.slide.in .hbar .bar{animation:growX 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.55s + var(--bi,0) * .12s)}
+.slide.in .hbar .v{animation:fadeIn .45s ease both;animation-delay:calc(1.2s + var(--bi,0) * .12s)}
+.dots .link{transform-origin:right center}
+.slide.in .dots .link{animation:growX .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.6s + var(--bi,0) * .12s)}
+.slide.in .dots .psh{animation:fadeIn .4s ease both;animation-delay:calc(1.2s + var(--bi,0) * .12s)}
+.towers .col{transform-origin:bottom center}
+.slide.in .towers .col{animation:growY 1.1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.5s + var(--bi,0) * .18s)}
+.slide.in .towers .cv,.slide.in .towers .cl{animation:fadeIn .45s ease both;animation-delay:calc(1.4s + var(--bi,0) * .18s)}
+.s1 .trail{animation:drift 7s ease-in-out infinite alternate}
+.hb .bar{transform-origin:left center;animation:growX .8s cubic-bezier(.2,.8,.2,1) both}
+.dp .psh{animation:fadeIn .5s ease .35s both}
+.cols .b{transform-origin:bottom center;animation:growY .8s cubic-bezier(.2,.8,.2,1) both}
+.cols .b span{animation:fadeIn .35s ease .7s both}
+@media (prefers-reduced-motion:reduce){
+  .slide .anim,.slide.in .anim,.slide.in .hbar .bar,.slide.in .hbar .v,.slide.in .dots .link,.slide.in .dots .psh,.slide.in .towers .col,.slide.in .towers .cv,.slide.in .towers .cl,.s1 .trail,.hb .bar,.dp .psh,.cols .b,.cols .b span{animation:none!important;opacity:1!important;transform:none!important}
+}
+
+.kpis .k b .cnt{display:inline;font-size:inherit;color:inherit;font-weight:inherit;letter-spacing:inherit}
 /* controls */
 .hud{position:fixed;right:20px;bottom:16px;opacity:0;transition:opacity .3s;font:400 13px var(--mono);color:#666;z-index:50;user-select:none}
 .hud.on{opacity:1}
@@ -414,6 +452,7 @@ h1.display .serif.dim{color:#c9cbd2}
   .grain::before{mix-blend-mode:normal;opacity:.05}
   .glass{backdrop-filter:none;-webkit-backdrop-filter:none}
   .hud{display:none}
+  .anim,.hbar .bar,.hbar .v,.dots .link,.dots .psh,.towers .col,.towers .cv,.towers .cl,.s1 .trail,.hb .bar,.dp .psh,.cols .b,.cols .b span{animation:none!important;opacity:1!important;transform:none!important}
   [data-tip]:hover::after{display:none}
 }
 </style>
@@ -441,9 +480,9 @@ h1.display .serif.dim{color:#c9cbd2}
     <div class="notch"></div><div class="perf"></div>
     <div class="route"><div>STRASBOURG<b>Rhin</b></div><div style="text-align:right">KEHL<b>20 &amp; 21 juin</b></div></div>
     <div class="rows">
-      <div class="row"><div class="n">1 919</div><div class="d">billets réels, <i>pas</i> 2 000 lignes</div></div>
-      <div class="row"><div class="n">83 880 <small>€</small></div><div class="d">de billetterie, plus 34 286 € au bar</div></div>
-      <div class="row alert"><div class="n">2,67 <small>/ 5</small></div><div class="d">pour les publics PSH, <i>contre</i> 3,96 pour les autres</div></div>
+      <div class="row"><div class="n"><span data-to="1919">1 919</span></div><div class="d">billets réels, <i>pas</i> 2 000 lignes</div></div>
+      <div class="row"><div class="n"><span data-to="83880">83 880</span> <small>€</small></div><div class="d">de billetterie, plus 34 286 € au bar</div></div>
+      <div class="row alert"><div class="n"><span data-to="2.67" data-dec="2">2,67</span> <small>/ 5</small></div><div class="d">pour les publics PSH, <i>contre</i> 3,96 pour les autres</div></div>
     </div>
     <div class="barcode" aria-hidden="true"></div>
   </div>
@@ -514,8 +553,8 @@ h1.display .serif.dim{color:#c9cbd2}
       <tr><td>Pub en allemand <span class="new">nouveau</span></td><td class="num">0 €</td><td class="arrow">→</td><td class="num">1 500 €</td><td class="d">+1 500</td></tr>
     </table>
     <div class="kpis">
-      <div class="k"><b>+15 %</b><span>de billets payants estimés<br>(1 455 contre 1 268)</span></div>
-      <div class="k"><b>9,28 €</b><span>de CAC moyen<br>contre 10,65 € en 2026</span></div>
+      <div class="k"><b>+<span class="cnt" data-to="15">15</span> %</b><span>de billets payants estimés<br>(1 455 contre 1 268)</span></div>
+      <div class="k"><b><span class="cnt" data-to="9.28" data-dec="2">9,28</span> €</b><span>de CAC moyen<br>contre 10,65 € en 2026</span></div>
     </div>
   </div>
   <div class="tele"><span>PROJECTION: BUDGET ÷ CAC 2026, CHAQUE EURO AJOUTÉ COÛTE 25 % PLUS CHER</span><span>CA TTC, BUDGET HT · SOURCE: ONGLETS KPI ET Q2_BUDGET_2027</span></div>
@@ -538,7 +577,7 @@ h1.display .serif.dim{color:#c9cbd2}
     <div class="acces">
       <div class="a"><b>85 %</b><span>des lieux culturels de Strasbourg ont une entrée de plain-pied</span></div>
       <div class="a"><b>88 %</b><span>ont des sanitaires adaptés</span></div>
-      <div class="a us"><b>0 sur 3</b><span>pour Echo-Fest: gravier, toilettes PMR fermées, pas de plateforme</span></div>
+      <div class="a us"><b>0 sur 3</b><span>pour Echo-Fest. Première plainte des PSH: le gravier devant la Grande Scène (14 commentaires)</span></div>
     </div>
   </div>
   <div class="right glass">
@@ -559,16 +598,16 @@ h1.display .serif.dim{color:#c9cbd2}
 <section class="slide s5 grain" aria-label="Slide 5, les décisions pour 2027">
   <div class="landing"></div><div class="horizon"></div>
   <nav class="nav"><span class="mark">ECHO-FEST <em>2026</em></span><span class="chap"><b>05</b> · Les décisions pour 2027</span><span class="nr">GROUPE 5 · ISEG</span><a class="navact" href="#/dashboard">Dashboard</a></nav>
-  <div class="head layer" style="position:absolute;inset:auto;left:72px;top:140px"><h2 class="show">Lundi matin, <span class="ital">on décide</span><br>quatre choses.</h2></div>
+  <div class="head layer" style="position:absolute;inset:auto;left:72px;top:140px"><h2 class="show">Lundi matin, <span class="ital">on décide</span><br>quatre choses, dans l’ordre.</h2></div>
   <div class="rail layer" style="inset:auto;left:72px;top:400px">
     <div class="tk"><div class="bg" style="background:radial-gradient(ellipse at 20% 20%,#5ad1ff,transparent 60%),radial-gradient(ellipse at 80% 70%,#6c4bd6,transparent 60%),#1b2a5a"></div>
-      <div class="lab">Marketing</div><div class="num">01</div><div><div class="tt">Couper la radio, miser sur TikTok en mars</div><div class="dd">+15 % de billets estimés, <i>à budget égal</i></div></div></div>
+      <div class="lab">Marketing</div><div class="num">01</div><div><div class="tt">Couper la radio, miser sur TikTok en mars</div><div class="dd">+15 % de billets estimés, <i>à budget égal</i></div><div class="who">Responsable communication · budget voté en janvier, campagne en mars 2027</div></div></div>
     <div class="tk"><div class="bg" style="background:radial-gradient(ellipse at 30% 20%,#af50ff,transparent 60%),radial-gradient(ellipse at 80% 80%,#ff6fb5,transparent 60%),#2a1240"></div>
-      <div class="lab">Accessibilité</div><div class="num">02</div><div><div class="tt">Rendre la Grande Scène accessible avant juin</div><div class="dd">Lot prioritaire: <i>2 040 à 3 280 €</i></div></div></div>
+      <div class="lab">Accessibilité</div><div class="num">02</div><div><div class="tt">Rendre la Grande Scène accessible avant juin</div><div class="dd">Lot prioritaire: <i>2 040 à 3 280 €</i></div><div class="who">Référent·e accessibilité · devis en mars, installé avant le 1<sup>er</sup> juin 2027</div></div></div>
     <div class="tk"><div class="bg" style="background:radial-gradient(ellipse at 20% 30%,#ff8fa3,transparent 60%),radial-gradient(ellipse at 80% 80%,#fa9e98,transparent 60%),#3d1530"></div>
-      <div class="lab">Sponsor</div><div class="num">03</div><div><div class="tt">Présenter le plan complet pour décrocher les 25 000 €</div><div class="dd">Coût du plan: <i>7 140 à 10 680 €</i></div></div></div>
+      <div class="lab">Sponsor</div><div class="num">03</div><div><div class="tt">Présenter le plan complet pour décrocher les 25 000 €</div><div class="dd">Coût du plan: <i>7 140 à 10 680 €</i></div><div class="who">La directrice · dossier remis au sponsor en février 2027</div></div></div>
     <div class="tk"><div class="bg" style="background:radial-gradient(ellipse at 30% 20%,#9ad0ff,transparent 60%),radial-gradient(ellipse at 70% 80%,#b78cff,transparent 60%),#16213d"></div>
-      <div class="lab">Données</div><div class="num">04</div><div><div class="tt">Une billetterie propre dès la saisie</div><div class="dd">Listes déroulantes, identifiant unique, <i>un seul</i> format de date</div></div></div>
+      <div class="lab">Données</div><div class="num">04</div><div><div class="tt">Une billetterie propre dès la saisie</div><div class="dd">Listes déroulantes, identifiant unique, <i>un seul</i> format de date</div><div class="who">Responsable billetterie · avant l'ouverture des ventes 2027</div></div></div>
   </div>
   <div class="closing">Objectif 2027: <span class="ital">un écart PSH</span> sous 0,5 point.</div>
   <div class="tele" style="bottom:28px;color:rgba(255,255,255,.65)"><span>AUJOURD'HUI: −1,30 POINT</span><span>MERCI · QUESTIONS DU COMITÉ</span></div>
@@ -648,6 +687,7 @@ h1.display .serif.dim{color:#c9cbd2}
       <table class="dtab" id="tab-mois" hidden></table>
       <p class="foot">Une vente de 39 € datée d'août, après le festival, n'apparaît pas. Les invitations et les accompagnateurs (0 €) ne sont pas comptés.</p>
     </section>
+    <p class="foot" style="margin-top:28px">Sources: billetterie Echo-Fest 2026 nettoyée (classeur du groupe 5, onglets CLEAN et KPI), budget marketing 2026. Données mises à jour le 13/11/2026.</p>
     <section class="method" aria-label="Méthode">
       <div><h3>Les données</h3><p>Billetterie 2026 nettoyée dans Google Sheets: doublons, tests, prix ×10, dates au format américain, notes sur 10, saisies libres recodées. Chaque opération est tracée dans le journal du classeur. Aucune donnée personnelle ici, seulement des agrégats.</p></div>
       <div><h3>Les calculs</h3><p>CAC = budget HT du canal ÷ billets payants du canal. ROAS = CA ÷ budget. Le CA est TTC et le budget HT, le ROAS est donc un peu surestimé. Notes ramenées sur 5, moyennes sur les répondants.</p></div>
@@ -665,7 +705,19 @@ h1.display .serif.dim{color:#c9cbd2}
   var bc=document.querySelector('.barcode');
   if(bc){var h=[3,1,2,5,1,1,3,2,1,4,1,2,2,1,3,1,5,1,2,1,1,3,2,4,1,2,1,3,1,1,2,5,1,2,3,1,1,4,2,1];h.forEach(function(v){var s=document.createElement('span');s.style.height=(v*2)+'px';bc.appendChild(s);});}
   function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);deck.style.transform='scale('+s+')';}
-  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('active',k===i);});
+  var fr0=function(v,d){return v.toLocaleString('fr-FR',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}).replace(/[\u202f\u00a0]/g,'\u00a0');};
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SEL=['.left .kicker','.left h1','.left .support','.s1 .ticket','.s2 .left h2','.eq .t','.s2 .left .note','.s2 .right .label','.flap .fr','.shame',
+           '.s3 .head','.s3 .left .label','.s3 .left .note','.s3 .right','.s4 .head','.s4 .left .label','.legend','.acces .a','.s4 .right',
+           '.s5 .head','.rail .tk','.s5 .closing','.s6 .head','.calc > div','.rain'].join(',');
+  slides.forEach(function(s){[].forEach.call(s.querySelectorAll(SEL),function(el,k){el.classList.add('anim');el.style.setProperty('--d',(0.05+k*0.08).toFixed(2)+'s');});
+    [].forEach.call(s.querySelectorAll('.hbar .r, .dots .r, .towers .col'),function(el,k){el.style.setProperty('--bi',k);});});
+  function count(root){if(reduce)return;[].forEach.call(root.querySelectorAll('[data-to]'),function(el){
+    var to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||'0',10),dur=1200,t0;if(el._tm)clearInterval(el._tm);el.textContent=fr0(0,dec);
+    setTimeout(function(){t0=Date.now();el._tm=setInterval(function(){var k=Math.min(1,(Date.now()-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=fr0(to*e,dec);if(k>=1){clearInterval(el._tm);el.textContent=fr0(to,dec);}},30);},400);});}
+  window.addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('[data-to]'),function(el){if(el._tm)clearInterval(el._tm);el.textContent=fr0(parseFloat(el.dataset.to),parseInt(el.dataset.dec||'0',10));});});
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('active',k===i);s.classList.remove('in');});
+    var cur=slides[i];void cur.offsetWidth;cur.classList.add('in');count(cur);
     document.getElementById('count').textContent=(i+1)+' / '+slides.length;
     try{history.replaceState(null,'','#/pitch/'+(i+1));}catch(e){}}
   document.addEventListener('keydown',function(e){
